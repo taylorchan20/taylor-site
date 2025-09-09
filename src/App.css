@@ -1,0 +1,127 @@
+body {
+    background-color: #FFF0FC;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+
+h1 {
+    padding: 0;
+    margin-block: 0;
+    font-family: "Inter";
+    font-size: 40px;;
+    font-weight: 600;
+    font-style: normal;
+    color: #333333;
+}
+
+h2 {
+    padding: 0;
+    margin-block: 0;
+    font-family: "Inter";
+    font-size: 30px;;
+    font-weight: 600;
+    font-style: normal;
+    color: #333333;
+}
+
+p {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+a, b {
+    color: #9c4d95;
+    font-weight: 600;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name-intro {
+  margin-top: 100px;
+  margin-bottom: 0px;
+}
+
+.bio-intro {
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+
+.project-title {
+  margin-bottom: 20px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.deck-card {
+  width: 220px;
+  height: 320px;
+  perspective: 1200px;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+  background: transparent;
+  position: relative;
+}
+
+.deck-card:hover {
+  transform: scale(1.07);
+  z-index: 2;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4,2,.3,.7);
+  transform-style: preserve-3d;
+}
+
+.deck-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-front {
+  background: #C295BC;
+}
+
+.card-back {
+  background: #FAE3F5;
+  transform: rotateY(180deg);
+}
+
+.contact-footer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
