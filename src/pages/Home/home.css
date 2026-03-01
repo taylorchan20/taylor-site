@@ -1,0 +1,179 @@
+.postcard {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  width: fit-content; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* postcard image */
+.main-img {
+  width: 1200px;       
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Updated to match your JSX preference */
+  display: block
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }  
+  10% { transform: rotate(1deg); }    
+  50% { transform: rotate(1deg); }    
+  60% { transform: rotate(0deg); }    
+  100% { transform: rotate(0deg); }   
+}
+
+@keyframes shake-reverse {
+  0% { transform: rotate(0deg); }  
+  10% { transform: rotate(-3deg); }    
+  50% { transform: rotate(-3deg); }    
+  60% { transform: rotate(0deg); }    
+  100% { transform: rotate(0deg); }   
+}
+
+@keyframes shake-more {
+  0% { transform: rotate(0deg); }  
+  10% { transform: rotate(3deg); }    
+  50% { transform: rotate(3deg); }    
+  60% { transform: rotate(0deg); }    
+  100% { transform: rotate(0deg); }   
+}
+
+.name {
+  position: absolute;
+  top: 175px;    /* Distance from the top edge */
+  left: 70px;  /* Distance from the right edge */
+  width: 720px;  /* Size of image */
+  height: auto;
+  animation: shake 1.5s ease-in-out infinite;
+}
+
+.logo {
+  position: absolute;
+  top: -50px;    /* Distance from the top edge */
+  right: -30px;  /* Distance from the right edge */
+  width: 400px;  /* Size of image */
+  height: auto;
+
+  /* zoom on hover */
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center; 
+}
+
+.logo:hover {
+  /* This zooms it by 10% */
+  transform: scale(1.1);
+}
+
+.mirrorball {
+  position: absolute;
+  top: 90px;    /* Distance from the top edge */
+  right: 300px;  /* Distance from the right edge */
+  width: 190px;  /* Size of image */
+  height: auto;
+  animation: shake-more 1.5s ease-in-out infinite;
+}
+
+.stars {
+  position: absolute;
+  top: 70px;    /* Distance from the top edge */
+  left: 70px;  /* Distance from the right edge */
+  width: 200px;  /* Size of image */
+  height: auto;
+  animation: shake-reverse 1.5s ease-in-out infinite;
+}
+
+.shells {
+  position: absolute;
+  top: 530px;    /* Distance from the top edge */
+  right: 500px;  /* Distance from the right edge */
+  width: 200px;  /* Size of image */
+  height: auto;
+  animation: shake-reverse 1.5s ease-in-out infinite;
+}
+
+.hat {
+  position: absolute;
+  top: 500px;    /* Distance from the top edge */
+  right: 80px;  /* Distance from the right edge */
+  width: 200px;  /* Size of image */
+  height: auto;
+  animation: shake-more 1.5s ease-in-out infinite;
+}
+
+.diamond {
+  position: absolute;
+  top: 520px;    /* Distance from the top edge */
+  left: 60px;  /* Distance from the right edge */
+  width: 250px;  /* Size of image */
+  height: auto;
+  animation: shake-more 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle-effect {
+  0%, 40% {   /* Stay bright and full size for the first 40% of the time */
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {       /* Fade out and shrink */
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  100% {      /* Fade back in */
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.twinkle1 {
+  position: absolute;
+  top: 100px;    /* Distance from the top edge */
+  left: 450px;  /* Distance from the right edge */
+  width: 200px;  /* Size of image */
+  height: auto;
+  animation: twinkle-effect 4s ease-in-out infinite;
+}
+
+.twinkle2 {
+  position: absolute;
+  top: 545px;    /* Distance from the top edge */
+  right: 220px;  /* Distance from the left edge */
+  width: 150px;  /* Size of image */
+  height: auto;
+  animation: twinkle-effect 1.5s ease-in-out infinite;
+  animation-delay: 0.5s;}
+
+.twinkle3 {
+  position: absolute;
+  top: 200px;    /* Distance from the top edge */
+  left: 80px;  /* Distance from the right edge */
+  width: 140px;  /* Size of image */
+  height: auto;
+  animation: twinkle-effect 3s ease-in-out infinite;
+  animation-delay: 1,2s;
+}
+
+.twinkle4 {
+  position: absolute;
+  top: 570px;    /* Distance from the top edge */
+  left: 385px;  /* Distance from the left edge */
+  width: 130px;  /* Size of image */
+  height: auto;
+  animation: twinkle-effect 2.5s ease-in-out infinite;
+  transform: rotate(45deg);
+}
+
+.postcard-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.postcard-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+

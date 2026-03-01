@@ -1,5 +1,5 @@
 body {
-    background-color: #FFF0FC;
+    background-color: #e6e3fc;
 }
 
 .hidden {
@@ -9,15 +9,16 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 
-h1 {
+/* h1 {
     padding: 0;
     margin-block: 0;
     font-family: "Inter";
     font-size: 40px;;
     font-weight: 600;
     font-style: normal;
-    color: #333333;
+    color: #000000;
 }
 
 h2 {
@@ -38,7 +39,7 @@ p {
 }
 
 a, b {
-    color: #9c4d95;
+    color: #0b1957;
     font-weight: 600;
 }
 
@@ -119,9 +120,10 @@ a, b {
 .card-back {
   background: #FAE3F5;
   transform: rotateY(180deg);
-}
+} */
 
 .contact-footer {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+

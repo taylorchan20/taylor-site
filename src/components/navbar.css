@@ -1,0 +1,34 @@
+.navbar {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;   
+  height: 90px;      
+  
+  background-color: #e6e3fc; 
+  /* border-bottom: 2px solid #9c4d95;  */
+  
+  z-index: 9999;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px; /* Space between links */
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #0b1957;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #9c4d95; /* Matches your purple accent */
+}

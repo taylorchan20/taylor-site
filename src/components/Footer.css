@@ -1,0 +1,76 @@
+.Mailbox{       
+  height: auto;
+  width: 500px;
+  margin-top: 130px;  /* Space between the top of the footer and the mailbox */
+  opacity: 0.8;        /* Makes it look a bit more subtle */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Airplane {
+  height: auto;
+  width: 300px;
+  margin-left: -20px;
+  opacity: 0.8;
+  
+  position: relative; /* Allows you to move it without breaking the layout */
+  top: -150px;         /* Negative moves it UP, positive moves it DOWN */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* This centers the mailbox, the p, and the contact div */
+  justify-content: center; /* Centers the whole group in the middle of the page */
+  gap: 0px; /* Space between the mailbox, the p, and the contact div */
+}
+
+.footer-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -90px;
+  margin-top: 80px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 50px;
+  font-weight: 20; /* This font is famous for its elegant regular weight */
+  color: #0b1957;
+}
+
+.italic {
+    font-style: italic;
+    color: #9c4d95; /* Optional: gives the "is always open!" part a nice purple color */
+    }
+
+
+/* Make sure the copyright text and email don't feel too crowded */
+.footer-text p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+
+.footer-links a {
+  font-size: 24px;
+  font-weight: 300;
+  color: #0b1957;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-links a:active {
+  color: #9c4d95;
+}
+
+.footer {
+    padding-bottom:80px;
+}
