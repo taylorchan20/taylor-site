@@ -7,8 +7,10 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
+        <div className="footer-images" />
         <img src={mailboxImg} alt="mailbox" className="Mailbox" />
         <img src={airplaneImg} alt="airplane" className="Airplane" />
+        <div></div>
 
         <div className="footer-text">
           <h3 className="footer-title">My mailbox <br />

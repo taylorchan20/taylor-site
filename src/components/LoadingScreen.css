@@ -9,6 +9,13 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+
+}
+
+.loading-screen.slide-up {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .loading-image {

@@ -11,45 +11,14 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 
-/* h1 {
-    padding: 0;
-    margin-block: 0;
-    font-family: "Inter";
-    font-size: 40px;;
-    font-weight: 600;
-    font-style: normal;
-    color: #000000;
-}
 
-h2 {
-    padding: 0;
-    margin-block: 0;
-    font-family: "Inter";
-    font-size: 30px;;
-    font-weight: 600;
-    font-style: normal;
-    color: #333333;
-}
-
-p {
-    font-family: "Inter";
-    font-size: 20px;
-    font-weight: 500;
-    color: #333333;
-}
-
-a, b {
-    color: #0b1957;
-    font-weight: 600;
-}
-
-.app-container {
+/* .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
-.name-intro {
+/* .name-intro {
   margin-top: 100px;
   margin-bottom: 0px;
 }
