@@ -14,6 +14,17 @@
   width: fit-content;
 }
 
+.about-postcard-wrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-postcard-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .about-main-img {
   width: clamp(320px, 85vw, 1200px);
   max-width: 100%;
@@ -38,7 +49,7 @@
     left: 44%;
     width: 29%;
     height: auto;
-    animation: shake 1.5s ease-in-out infinite;
+    animation: shake-opposite 1.5s ease-in-out infinite;
 }
 
 .heart {
@@ -59,20 +70,88 @@
     animation: shake-more 1.5s ease-in-out infinite;
 }
 
+.twinkle {
+    position: absolute;
+    top: 10%;
+    right: 30.5%;
+    width: 14%;
+    height: auto;
+}
+
+.logo {
+  position: absolute;
+  top: -6%;
+  right: -2.5%;
+  width: 33%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.logo:hover {
+  /* This zooms it by 10% */
+  transform: scale(1.1);
+}
+
+.arrow {
+  position: absolute;
+  top: 34%;
+  right: 25%;
+  width: 14%;
+  height: auto;
+  /* animation: shake-opposite 1.5s ease-in-out infinite; */
+}
+
+.arrow2 {
+  position: absolute;
+  bottom: 16%;
+  right: 24%;
+  width: 14%;
+  height: auto;
+  rotate: 160deg;
+  transform: scaleX(-1);
+}
+
 .about-text {
   position: absolute;
   top: 57%;
   left: 68%;
   transform: translate(-50%, -50%);
   width: 39%;
-  color: #0b1957;
-  font-family: 'Inter', sans-serif;
-  font-weight: 450;
+  color: #000000;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
   font-size: clamp(12px, 1.5vw, 15.5px);
   text-align: left;
 }
 
+.stars1 {
+    position: absolute;
+    top: 33.5%;
+    left: 43.5%;
+    width: 7.5%;
+    height: auto;
+    rotate: -20deg;
+}
+
+.twinkle5 {
+    position: absolute;
+    bottom: 9%;
+    right: 17%;
+    width: 10%;
+    height: auto;
+    rotate: 40deg;
+}
+
 .bold {
-    font-weight: 600;
-    color: #9c4d95;
+    font-weight: 700;
+    color: #9775b5;
+}
+
+@keyframes shake-opposite {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-1deg); }
+  50% { transform: rotate(-1deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
