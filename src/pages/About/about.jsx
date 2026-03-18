@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import AboutPostcard from '../../components/About-Postcard';
-import './about.css';
+import AboutFavourites from '../../components/About-Favourites';
+import '../../components/About-Postcard.css';
+import '../../components/About-Favourites.css';
 
 function About() {
     const aboutPostcardRef = useRef(null);
@@ -24,6 +26,7 @@ function About() {
             <div className="about-postcard-wrapper" ref={aboutPostcardRef}>
                 <AboutPostcard />
             </div>
+            <AboutFavourites />
         </div>
     );
 }

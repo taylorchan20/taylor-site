@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import Description from '../../components/Description';
-import ProjectCard from '../../components/ProjectCard';
+// import Description from '../../components/Description';
+// import ProjectCard from '../../components/ProjectCard';
 import Postcard from '../../components/Postcard';
 import './home.css';
 
