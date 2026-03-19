@@ -5,34 +5,42 @@ import { useRef, useEffect } from 'react';
 
 export default function AboutFavourites() {
     const letterRef = useRef(null);
+    const listRef = useRef(null);
     const textRef = useRef(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        letterRef.current.classList.add('visible');
-                        textRef.current.classList.add('visible');
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
+    const refs = [letterRef, listRef, textRef];
 
-        const parent = letterRef.current?.parentElement?.parentElement;
-        if (parent) observer.observe(parent);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
 
-        return () => observer.disconnect();
-    }, []);
+    const timer = setTimeout(() => {
+        refs.forEach(ref => {
+            if (ref.current) observer.observe(ref.current);
+        });
+    }, 500);
 
+    return () => {
+        clearTimeout(timer);
+        observer.disconnect();
+    };
+}, []);
+    
     return (
         <div className="about-favourites">
             <div className="envelope-group">
                 <img src={envelope1Img} alt="envelope1" className="envelope1" />
                 <img src={letterImg} alt="letter" className="letter" ref={letterRef} />
                 <img src={envelope2Img} alt="envelope2" className="envelope2" />
-                <p className="favourites-list">
+                <p className="favourites-list" ref={listRef}>
                     <span className="bold">Books:</span> Carrie Soto is Back, Atmosphere <br />
                     <span className="bold">Albums:</span> GUTS, The Secret of Us <br />
                     <span className="bold">Places:</span> Kauai, Milos <br />
