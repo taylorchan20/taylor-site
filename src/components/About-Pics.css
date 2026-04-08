@@ -1,0 +1,93 @@
+.about-pics-title {
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.pics-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(22px, 4vw, 63px);
+    font-weight: 20;
+    color: #0b1957;
+    margin-bottom: clamp(10px, 1vw, 40px);
+}
+
+.pics-subtitle {
+    font-family: 'Mulish', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: clamp(11px, 1vw, 22px);
+    color: #000000;
+    width: 80%;
+}
+
+.pics {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.pics-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: -3%;
+}
+
+.about-pic1, .about-pic2, .about-pic3, .about-pic4, .about-pic5,
+.about-pic6, .about-pic7, .about-pic8, .about-pic9, .about-pic10 {
+    width: 16%;
+    height: auto;
+    display: block;
+    position: relative;
+    transition: all 0.4s ease;
+    padding: 2.5%;
+}
+
+.about-pic2, .about-pic3, .about-pic4, .about-pic5,
+.about-pic7, .about-pic8, .about-pic9, .about-pic10 {
+    margin-left: -5%;
+}
+
+/* scattered */
+.about-pic1  { rotate: -8deg;  translate: 20px 15px; }
+.about-pic2  { rotate: 5deg;   translate: -10px 30px; }
+.about-pic3  { rotate: -4deg;  translate: 15px -20px; }
+.about-pic4  { rotate: 7deg;   translate: -5px 25px; }
+.about-pic5  { rotate: -6deg;  translate: 10px 10px; }
+.about-pic6  { rotate: 4deg;   translate: -15px 20px; }
+.about-pic7  { rotate: -7deg;  translate: 20px -10px; }
+.about-pic8  { rotate: 6deg;   translate: -10px 15px; }
+.about-pic9  { rotate: -3deg;  translate: 5px 25px; }
+.about-pic10 { rotate: 8deg;   translate: -20px -5px; }
+
+/* on hover of the whole pics section, snap to neat rows */
+.pics:hover .about-pic1,  .pics:hover .about-pic2,
+.pics:hover .about-pic3,  .pics:hover .about-pic4,
+.pics:hover .about-pic5,  .pics:hover .about-pic6,
+.pics:hover .about-pic7,  .pics:hover .about-pic8,
+.pics:hover .about-pic9,  .pics:hover .about-pic10 {
+    rotate: 0deg;
+    translate: 0px 0px;
+}
+
+@media (max-width: 768px) {
+    .pics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pics-row {
+        display: contents; /* makes the row div "invisible" so pics flow freely */
+    }
+
+    .about-pic1, .about-pic2, .about-pic3, .about-pic4, .about-pic5,
+    .about-pic6, .about-pic7, .about-pic8, .about-pic9, .about-pic10 {
+        width: 40%;
+        padding: 4%;
+    }
+
+    .about-pic2, .about-pic3, .about-pic4, .about-pic5,
+    .about-pic7, .about-pic8, .about-pic9, .about-pic10 {
+        margin-left: 0;
+    }
+}
