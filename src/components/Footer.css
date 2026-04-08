@@ -39,7 +39,7 @@
   margin-left: clamp(-20px, -6vw, -90px);
   margin-top: clamp(20px, 5vw, 80px);
   font-family: 'Instrument Serif', serif;
-  font-size: clamp(28px, 4vw, 50px);
+  font-size: clamp(21px, 4vw, 50px);
   font-weight: 20;
   color: #0b1957;
 }
@@ -51,7 +51,7 @@
 
 .footer-text p {
   margin: 2px 0;
-  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: clamp(7px, 1.2vw, 14px);
   color: #000000;
   font-family: 'Inter', sans-serif;
   font-weight: 200;
@@ -65,7 +65,7 @@
 }
 
 .footer-links a {
-  font-size: clamp(16px, 2vw, 24px);
+  font-size: clamp(12px, 2vw, 24px);
   font-weight: 300;
   color: #0b1957;
   text-decoration: none;
@@ -83,7 +83,7 @@
 
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 

@@ -1,6 +1,31 @@
+.about-pics {
+    display: flex;
+    flex-wrap: wrap;  /* so pics still flow below */
+}
+
+.line {
+    width: 100%;
+    height: auto;
+    margin-bottom: -5%;
+}
+
 .about-pics-title {
+    flex: 1;  /* takes up remaining space */
     margin-left: 10%;
     margin-top: 3%;
+}
+
+.stamp-container {
+    margin-left: auto;  /* pushes stamp to the right */
+    margin-right: -30%;   /* distance from right edge of screen */
+    margin-top: 5%;
+}
+
+.stamp {
+    width: 30%;
+    height: auto;
+    opacity: 0.8;
+    rotate: 10deg;
 }
 
 .pics-title {
@@ -69,6 +94,12 @@
     translate: 0px 0px;
 }
 
+.line2 {
+    width: 100%;
+    height: auto;
+    margin-bottom: -8%;
+}
+
 @media (max-width: 768px) {
     .pics {
         display: flex;
@@ -90,4 +121,12 @@
     .about-pic7, .about-pic8, .about-pic9, .about-pic10 {
         margin-left: 0;
     }
+}
+
+@media (max-width: 768px) {
+    .stamp-container {
+        display: none;
+    }
+
+    /* rest of your existing mobile styles... */
 }
