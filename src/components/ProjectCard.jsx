@@ -1,23 +1,27 @@
 import { useState } from "react";
-import "./../App.css";
 
-export default function ProjectCard({ front, back }) {
+export default function ProjectCard({ front, back, title, description, backImg, alt = "" }) {
   const [flipped, setFlipped] = useState(false);
-
-  const handleClick = () => {
-    setFlipped((prev) => !prev);
-  };
 
   return (
     <div
       className={`project-card deck-card${flipped ? " flipped" : ""}`}
-      onClick={handleClick}
+      onClick={() => setFlipped((prev) => !prev)}
       tabIndex={0}
     >
       <div className="card-inner">
-        <div className="card-front">{front}</div>
-        <div className="card-back">{back}</div>
+        <div className="card-front">
+          <img src={front} alt={alt} />
+        </div>
+        <div className="card-back">
+          <img src={back} alt={`${alt} back`} />
+          <div className="card-back-info">
+            {backImg && <img src={backImg} alt="icon" className="back-icon" />}
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
+        </div>
       </div>
-    </div>
+  </div>
   );
 }

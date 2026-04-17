@@ -41,7 +41,7 @@ useEffect(() => {
                 <img src={envelope2Img} alt="envelope2" className="envelope2" />
                 <p className="favourites-list" ref={listRef}>
                     <span className="bold">Books:</span> Carrie Soto is Back, Atmosphere <br />
-                    <span className="bold">Albums:</span> GUTS, Stick Season <br />
+                    <span className="bold">Albums:</span> GUTS, folklore <br />
                     <span className="bold">Place:</span> Kauai, Hawaii <br />
                     <span className="bold">Food:</span> Dim sum and mango <br />
                     <span className="bold">Current Obsession:</span> Bead embroidery

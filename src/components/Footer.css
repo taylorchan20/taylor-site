@@ -40,7 +40,7 @@
   margin-top: clamp(20px, 5vw, 80px);
   font-family: 'Instrument Serif', serif;
   font-size: clamp(21px, 4vw, 50px);
-  font-weight: 20;
+  font-weight: 100;
   color: #0b1957;
 }
 

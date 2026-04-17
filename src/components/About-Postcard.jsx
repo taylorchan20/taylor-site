@@ -29,7 +29,7 @@ export default function AboutPostcard() {
                         <span className="bold"> Mechanical Engineer at Evertz.</span> </p>
                     <p>I live in a constant state of <span className="bold">wanderlust</span> - not just for places, but for ideas. I'm passionate about exploring the world and understanding how it works, 
                         with the goal of leaving it better than I found it. </p>    
-                    <p>I'm a big believer in living life to its fullest! With that, you can catch me enjoying some of my current favourites.</p>
+                    <p>I'm a big believer in living life to its fullest! With that, you can catch me enjoying some of my current favourites below.</p>
                 </div>    
             </div>            
         </div>

@@ -1,0 +1,105 @@
+.projects-section {
+  padding: 12rem 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7%;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: -3rem;
+}
+
+.project-card {
+  aspect-ratio: 3/2;
+  perspective: 900px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.project-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* This targets the div you added inside .card-back */
+.card-back-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Centering the text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Text Styling */
+  color: rgb(0, 0, 0); /* Make sure this contrasts with your BackBlue/BackPurple */
+  text-align: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  
+  /* Ensure it sits in front of the image */
+  z-index: 1;
+}
+
+/* Style the new smaller image/icon */
+.back-icon {
+  width: 60px;       /* Adjust size as needed */
+  height: 60px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.card-back-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.card-back-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.project-card {
+  aspect-ratio: 3/2;
+  perspective: 900px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
