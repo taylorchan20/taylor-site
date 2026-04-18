@@ -1,20 +1,8 @@
-.projects-section {
-  padding: 12rem 2rem;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 7%;
-  width: 85%;
-  margin: 0 auto;
-  margin-bottom: -3rem;
-}
-
+/* ── PROJECT CARD ── */
 .project-card {
-  aspect-ratio: 3/2;
-  perspective: 900px;
-  cursor: pointer;
+  width: clamp(220px, 70vw, 900px);
+  height: auto;
+  perspective: 1000px;
 }
 
 .card-inner {
@@ -22,84 +10,102 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
 }
 
+/* Flipped state rotates the inner container */
 .project-card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
+/* ── SHARED FACE STYLES ── */
 .card-front,
 .card-back {
   position: absolute;
   inset: 0;
+  border-radius: 8px;
   backface-visibility: hidden;
-  border-radius: 4px;
+  -webkit-backface-visibility: hidden;
   overflow: hidden;
+  /* border: 0.5px solid rgba(0, 0, 0, 0.12); */
 }
 
-.card-back {
-  transform: rotateY(180deg);
-}
-
-.card-front img,
-.card-back img {
+/* ── FRONT ── */
+.card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* This targets the div you added inside .card-back */
-.card-back-info {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* ── BACK ── */
+.card-back {
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+.card-back > img {
   width: 100%;
   height: 100%;
-  
-  /* Centering the text content */
+  object-fit: cover;
+  display: block;
+}
+
+/* Text overlay on back image */
+.card-back-info {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  
-  /* Text Styling */
-  color: rgb(0, 0, 0); /* Make sure this contrasts with your BackBlue/BackPurple */
-  text-align: center;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  
-  /* Ensure it sits in front of the image */
-  z-index: 1;
+  align-items: flex-start;
+  padding: 6vw;
 }
 
-/* Style the new smaller image/icon */
-.back-icon {
-  width: 60px;       /* Adjust size as needed */
-  height: 60px;
-  margin-bottom: 15px;
-  object-fit: contain;
+.text-content {
+  max-width: 65%;
+  text-align: left;
+  margin-top: -15vw;
+  font-family: 'Mulish', sans-serif;
 }
 
 .card-back-info h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .card-back-info p {
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0.88;
+}
+
+.back-icon {
+  position: absolute; 
+  /* Now you can move it anywhere with pixel-perfection */
+  top: 30%; 
+  left: 12%; 
+  width: 24vw; /* 22vw is a bit huge, narrowed it down */
+  height: auto;
+  border-radius: 6px;
+  /* Reset these since we are using absolute now */
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  rotate: -2deg;
 }
 
-.project-card {
-  aspect-ratio: 3/2;
-  perspective: 900px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.bullets {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0;
+  margin-top: clamp(5px, 2vh, 15px); /* Responsive gap above the list */
+  text-align: left;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
+.back-bullets li {
+  font-size: clamp(9px, 2vw, 12px); /* Slightly smaller than main desc */
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 2px;
+  line-height: 1.3;
 }

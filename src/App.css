@@ -13,11 +13,12 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200..900&display=swap");
 
 
-/* .app-container {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+  width: 100%;
+}
 
 /* .name-intro {
   margin-top: 100px;
