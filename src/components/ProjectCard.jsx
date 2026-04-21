@@ -7,13 +7,14 @@ export default function ProjectCard({
   description,
   bullets,
   backImg,
+  backVideo,
+  backVideo1,
   alt = "",
   isTop,
   onBringToFront,
 }) {
   const [flipped, setFlipped] = useState(false);
 
-  // Safety fix: If the card is no longer on top, force it to un-flip
   useEffect(() => {
     if (!isTop) setFlipped(false);
   }, [isTop]);
@@ -34,6 +35,7 @@ export default function ProjectCard({
       onKeyDown={(e) => e.key === "Enter" && handleClick()}
     >
       <div className="card-inner">
+
         {/* FRONT FACE */}
         <div className="card-front">
           <img src={front} alt={alt} />
@@ -41,17 +43,94 @@ export default function ProjectCard({
 
         {/* BACK FACE */}
         <div className="card-back">
-          <img src={back} alt={`${alt} back`} className="back-bg-img" />
-          
-          <div className="card-back-info">
-            {/* 1. Icon is absolute - moved by top/left in CSS */}
-            {backImg && (
-              <img src={backImg} alt="icon" className="back-icon" />
-            )}
 
-            {/* 2. Text group - moved by justify-content/align-items in CSS */}
+          {/* Layer 1 — full bleed background image */}
+          <img
+            src={back}
+            alt=""
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+              zIndex: 0,
+            }}
+          />
+
+          {/* Layer 2 — decorative icon, independently placed */}
+          {backImg && (
+            <img
+              src={backImg}
+              alt="icon"
+              style={{
+                position: "absolute",
+                top: "28%",       // ← adjust freely without touching text
+                left: "9%",
+                width: "40%",
+                height: "auto",
+                zIndex: 2,
+                borderRadius: "6px",
+              }}
+            />
+          )}
+
+                {/* Layer 2 — video instead of image */}
+          {backVideo && (
+            <video
+            src={backVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: "absolute",
+              top: "22%",
+              left: "12%",
+              width: "35%",
+              height: "auto",
+              zIndex: 2,
+              borderRadius: "6px",
+        }}
+      />
+    )}
+
+          {backVideo1 && (
+            <video
+            src={backVideo1}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: "absolute",
+              top: "29%",
+              left: "10%",
+              width: "38%",
+              height: "auto",
+              zIndex: 2,
+              borderRadius: "6px",
+        }}
+      />
+    )}
+
+          {/* Layer 3 — text overlay, independently placed */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 3,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              padding: "8%",
+              boxSizing: "border-box",
+            }}
+          >
             <div className="text-content">
-              <h3>{title}</h3>
+              <h2>{title}</h2>
               <p>{description}</p>
               {bullets && bullets.length > 0 && (
                 <ul>
@@ -62,6 +141,7 @@ export default function ProjectCard({
               )}
             </div>
           </div>
+
         </div>
       </div>
     </div>

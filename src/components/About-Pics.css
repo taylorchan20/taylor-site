@@ -17,7 +17,7 @@
 
 .stamp-container {
     margin-left: auto;  /* pushes stamp to the right */
-    margin-right: -30%;   /* distance from right edge of screen */
+    margin-right: 0;   /* removed negative margin */
     margin-top: 5%;
 }
 

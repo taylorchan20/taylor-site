@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 
 const STACK_OFFSETS = [
   { top: 10,  left: 14,  rotate:  0 },
-  { top: 18,  left: 6,   rotate: -3 },
+  { top: 18,  left: 3,   rotate: -3 },
   { top: 24,  left: -2,  rotate: -6 },
   { top: 28,  left: -8,  rotate: -9 },
   { top: 30,  left: -13, rotate: -11 },
@@ -12,19 +12,17 @@ const STACK_OFFSETS = [
 
 export default function PostcardStack({ cards }) {
   const N = cards.length;
-  const [topIndex, setTopIndex] = useState(N - 1);
-
-  const bringToFront = (i) => setTopIndex(i);
+  const [topIndex, setTopIndex] = useState(0);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
+    <div className="postcard-stack-outer">
 
-      {/* Stack area — position:relative must stay for absolute children */}
-      <div className="card-stack" style={{ height: "450px" }}>
+      {/* Stack */}
+      <div className="card-stack">
         {cards.map((card, i) => {
           const dist = (topIndex - i + N) % N;
           const offset = STACK_OFFSETS[Math.min(dist, STACK_OFFSETS.length - 1)];
-          const zIndex = i === topIndex ? N : N - dist;
+          const zIndex = i === topIndex ? N * 2 : i;
           const isTop = i === topIndex;
 
           return (
@@ -33,15 +31,15 @@ export default function PostcardStack({ cards }) {
               className="card-stack-slot"
               style={{
                 top: offset.top,
-                left: "50%",
                 zIndex,
                 transform: `translateX(-50%) translateX(${offset.left}px) rotate(${offset.rotate}deg)`,
+                animationDelay: `${i * 0.5}s`,
               }}
             >
               <ProjectCard
                 {...card}
                 isTop={isTop}
-                onBringToFront={() => bringToFront(i)}
+                onBringToFront={() => setTopIndex(i)}
               />
             </div>
           );
@@ -49,7 +47,7 @@ export default function PostcardStack({ cards }) {
       </div>
 
       {/* Dots */}
-      <div style={{ display: "flex", gap: "8px", justifyContent: "center", marginTop: "clamp(5px, 15vw, 15vw)" }}>
+      <div className="card-stack-dots">
         {cards.map((card, i) => (
           <button
             key={card.title ?? i}
@@ -63,6 +61,7 @@ export default function PostcardStack({ cards }) {
       <p className="stack-hint">
         click top card to flip &middot; click underneath to bring forward
       </p>
+
     </div>
   );
 }

@@ -40,7 +40,7 @@
   margin-top: clamp(20px, 5vw, 80px);
   font-family: 'Instrument Serif', serif;
   font-size: clamp(21px, 4vw, 50px);
-  font-weight: 100;
+  font-weight: 20;
   color: #0b1957;
 }
 
@@ -74,6 +74,10 @@
 
 .footer-links a:active {
   color: #9c4d95;
+}
+
+.footer-text h3 {
+  font-family: 'Instrument Serif', serif !important;
 }
 
 .footer {

@@ -1,7 +1,7 @@
 /* ── PROJECT CARD ── */
 .project-card {
   width: clamp(220px, 70vw, 900px);
-  height: auto;
+  height: clamp(150px, 45vw, 600px);;
   perspective: 1000px;
 }
 
@@ -42,70 +42,93 @@
 /* ── BACK ── */
 .card-back {
   transform: rotateY(180deg);
-  position: relative;
-}
-
-.card-back > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Text overlay on back image */
-.card-back-info {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 6vw;
 }
 
 .text-content {
-  max-width: 65%;
+  max-width: 45%;
+  min-width: 0;  
   text-align: left;
-  margin-top: -15vw;
-  font-family: 'Mulish', sans-serif;
+  margin-right: 3%;
+  margin-top: -2vw;
 }
 
-.card-back-info h3 {
-  font-size: 15px;
-  font-weight: 600;
+.text-content h2 {
+  font-size: clamp(14px, 3.5vw, 42px);
+  font-weight: 700;
   margin-bottom: 4px;
+  font-family: 'Instrument Serif', serif;
+  color: #0b1957;
 }
 
-.card-back-info p {
-  font-size: 11px;
-  line-height: 1.6;
+.text-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text-content a:hover {
+  text-decoration: underline;
+  color: #9c4d95;
+}
+
+.text-content p {
+  font-size: clamp(3px, 3cqw, 13px);
+  line-height: 1.3;
   opacity: 0.88;
+  font-family: 'Mulish', sans-serif;
+
 }
 
-.back-icon {
-  position: absolute; 
-  /* Now you can move it anywhere with pixel-perfection */
-  top: 30%; 
-  left: 12%; 
-  width: 24vw; /* 22vw is a bit huge, narrowed it down */
-  height: auto;
-  border-radius: 6px;
-  /* Reset these since we are using absolute now */
-  margin: 0;
-  rotate: -2deg;
-}
-
-.bullets {
+/* Bullet Styling - Matches the <ul> in your JSX */
+.text-content ul {
   list-style-type: disc;
   list-style-position: inside;
-  padding: 0;
-  margin-top: clamp(5px, 2vh, 15px); /* Responsive gap above the list */
+  padding-left: 1em;
+  margin: 0;
+  list-style-type: "✦ ";
+}
+
+.text-content li {
+  font-family: 'Mulish', sans-serif; /* Matches paragraph font */
+  font-size: clamp(9px, 3cqw, 14px);
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 4px;
   text-align: left;
 }
 
-.back-bullets li {
-  font-size: clamp(9px, 2vw, 12px); /* Slightly smaller than main desc */
-  color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 2px;
-  line-height: 1.3;
+@media (max-width: 600px) {
+  .project-card {
+    width: 85vw;
+    height: 55vw; 
+  }
+
+  .card-back-info {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 12px 2px 20px 12px;
+  }
+
+  .text-content {
+    max-width: 80%;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .text-content h2 {
+    font-size: clamp(11px, 3.5vw, 18px);
+  }
+
+  .text-content p,
+  .text-content li {
+    font-size: clamp(7px, 1.5vw, 12px);
+    line-height: 1.4;
+  }
 }
+/* 
+  .back-icon {
+    top: 20%;
+    left: 5%;
+    width: 35vw;
+  } */
+
+   
