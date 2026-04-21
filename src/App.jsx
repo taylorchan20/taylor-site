@@ -23,10 +23,10 @@ function App() {
     return !sessionStorage.getItem('hasLoaded');
   });
 
-  const handleFinish = () => {
-    sessionStorage.setItem('hasLoaded', 'true');
-    setLoading(false);
-  };
+ <LoadingScreen onFinish={() => {
+  sessionStorage.setItem('hasLoaded', 'true');
+  setLoading(false);
+}} />
 
   return (
     <BrowserRouter>

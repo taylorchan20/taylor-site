@@ -25,7 +25,7 @@ function LoadingScreen({ onFinish }) {
             });
         }, 800);
         return () => clearInterval(interval);
-    }, []);
+    }, [onFinish]);
 
     return (
         <div className={`loading-screen ${leaving ? 'slide-up' : ''}`}>

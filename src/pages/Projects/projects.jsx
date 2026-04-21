@@ -1,4 +1,3 @@
-import ProjectCard from "../../components/ProjectCard";
 import "../../components/ProjectCard.css";
 import PostcardStack from "../../components/PostcardStack";
 import "../../components/PostcardStack.css";
