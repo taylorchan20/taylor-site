@@ -98,37 +98,33 @@
 
 @media (max-width: 600px) {
   .project-card {
-    width: 85vw;
-    height: 55vw; 
-  }
-
-  .card-back-info {
-    align-items: flex-start;
-    justify-content: center;
-    padding: 12px 2px 20px 12px;
+    width: 68vw;
+    height: 85vw; 
   }
 
   .text-content {
     max-width: 80%;
-    text-align: left;
+    text-align: center;
     margin-top: 0;
   }
 
   .text-content h2 {
-    font-size: clamp(11px, 3.5vw, 18px);
+    font-size: clamp(11px, 4vw, 18px);
+    text-align: center;
   }
 
   .text-content p,
   .text-content li {
-    font-size: clamp(7px, 1.5vw, 12px);
+    font-size: clamp(7px, 2vw, 12px);
     line-height: 1.4;
+    text-align: left;
+  }
+
+  .text-content ul {
+    padding-left: 0;
+    list-style-position: inside;
   }
 }
-/* 
-  .back-icon {
-    top: 20%;
-    left: 5%;
-    width: 35vw;
-  } */
+
 
    

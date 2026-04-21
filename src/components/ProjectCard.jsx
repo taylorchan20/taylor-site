@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth <= 600);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return isMobile;
+}
+
 export default function ProjectCard({
   front,
   back,
@@ -9,6 +19,8 @@ export default function ProjectCard({
   backImg,
   backVideo,
   backVideo1,
+  frontMobile,
+  backMobile,
   alt = "",
   isTop,
   onBringToFront,
@@ -27,6 +39,12 @@ export default function ProjectCard({
     }
   };
 
+  /* mobile handling */
+  const isMobile = useIsMobile();
+
+  const activeFront = isMobile && frontMobile ? frontMobile : front;
+  const activeBack  = isMobile && backMobile  ? backMobile  : back;
+
   return (
     <div
       className={`project-card${flipped ? " flipped" : ""}`}
@@ -38,7 +56,7 @@ export default function ProjectCard({
 
         {/* FRONT FACE */}
         <div className="card-front">
-          <img src={front} alt={alt} />
+          <img src={activeFront} alt={alt} />
         </div>
 
         {/* BACK FACE */}
@@ -46,7 +64,7 @@ export default function ProjectCard({
 
           {/* Layer 1 — full bleed background image */}
           <img
-            src={back}
+            src={activeBack}
             alt=""
             style={{
               position: "absolute",
@@ -61,20 +79,19 @@ export default function ProjectCard({
 
           {/* Layer 2 — decorative icon, independently placed */}
           {backImg && (
-            <img
-              src={backImg}
-              alt="icon"
-              style={{
-                position: "absolute",
-                top: "28%",       // ← adjust freely without touching text
-                left: "9%",
-                width: "40%",
-                height: "auto",
-                zIndex: 2,
-                borderRadius: "6px",
-              }}
-            />
-          )}
+            <img src={backImg}
+            alt="icon"
+            style={{
+            position: "absolute",
+            top: isMobile ? "12%" : "28%",
+            left: isMobile ? "50%" : "9%",
+            transform: isMobile ? "translateX(-50%)" : "none",
+            width: isMobile ? "65%" : "40%",
+            height: "auto",
+            zIndex: 2,
+            borderRadius: "6px",
+          }} />
+      )}
 
                 {/* Layer 2 — video instead of image */}
           {backVideo && (
@@ -86,9 +103,10 @@ export default function ProjectCard({
             playsInline
             style={{
               position: "absolute",
-              top: "22%",
-              left: "12%",
-              width: "35%",
+              top: isMobile ? "10%" : "28%",
+              left: isMobile ? "50%" : "9%",
+              transform: isMobile ? "translateX(-50%)" : "none",
+              width: isMobile ? "42%" : "40%",
               height: "auto",
               zIndex: 2,
               borderRadius: "6px",
@@ -105,9 +123,10 @@ export default function ProjectCard({
             playsInline
             style={{
               position: "absolute",
-              top: "29%",
-              left: "10%",
-              width: "38%",
+              top: isMobile ? "12%" : "28%",
+              left: isMobile ? "50%" : "9%",
+              transform: isMobile ? "translateX(-50%)" : "none",
+              width: isMobile ? "65%" : "40%",
               height: "auto",
               zIndex: 2,
               borderRadius: "6px",
@@ -123,9 +142,9 @@ export default function ProjectCard({
               zIndex: 3,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "flex-end",
-              padding: "8%",
+              justifyContent: isMobile ? "flex-end" : "center",
+              alignItems: isMobile ? "center" : "flex-end",
+              padding: isMobile ? "8% 8% 20% 8%" : "8%",
               boxSizing: "border-box",
             }}
           >

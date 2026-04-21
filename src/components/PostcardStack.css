@@ -73,7 +73,8 @@
 /* ── MOBILE ── */ 
 @media (max-width: 600px) {
   .card-stack {
-    height: 55vw; 
+    width: 68vw;
+    height: 85vw; 
   }
 
   .postcard-stack-outer {
