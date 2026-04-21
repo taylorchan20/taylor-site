@@ -23,11 +23,6 @@ function App() {
     return !sessionStorage.getItem('hasLoaded');
   });
 
- <LoadingScreen onFinish={() => {
-  sessionStorage.setItem('hasLoaded', 'true');
-  setLoading(false);
-}} />
-
   return (
     <BrowserRouter>
       <ScrollToTop />
