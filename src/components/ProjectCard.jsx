@@ -93,7 +93,7 @@ export default function ProjectCard({
           }} />
       )}
 
-                {/* Layer 2 — video instead of image */}
+                {/* project 3 video */}
           {backVideo && (
             <video
             src={backVideo}
@@ -103,10 +103,10 @@ export default function ProjectCard({
             playsInline
             style={{
               position: "absolute",
-              top: isMobile ? "10%" : "28%",
-              left: isMobile ? "50%" : "9%",
+              top: isMobile ? "10%" : "22%",
+              left: isMobile ? "50%" : "10%",
               transform: isMobile ? "translateX(-50%)" : "none",
-              width: isMobile ? "42%" : "40%",
+              width: isMobile ? "42%" : "32%",
               height: "auto",
               zIndex: 2,
               borderRadius: "6px",
