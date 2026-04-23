@@ -14,14 +14,25 @@ import stamp from '../assets/Stamp.png';
 export default function AboutPics() {
     return (
         <div className="about-pics">
+
             <img src={line} alt="line" className="line" />
-            <div className="about-pics-title">
-                <h2 className="pics-title">Collected <span className="italic1">along the way</span></h2>
-                <p className="pics-subtitle">(or, snapshots of my life that I'm most grateful for)</p>
+
+            {/* title + stamp row */}
+            <div style={{
+                display: "flex",
+                alignItems: "flex-start",
+                width: "100%",
+                marginTop: "3%",
+            }}>
+                <div style={{ flex: 1, marginLeft: "10%" }}>
+                    <h2 className="pics-title" style={{ whiteSpace: "nowrap" }}>Collected <span className="italic1">along the way</span></h2>
+                    <p className="pics-subtitle" style={{ whiteSpace: "nowrap" }}>(or, snapshots of my life that I'm most grateful for)</p>
+                </div>
+                <div style={{ flexShrink: 0, marginRight: "5%", marginTop: "1%", marginLeft: "25%" }}>
+                    <img src={stamp} alt="stamp" className="stamp" />
+                </div>
             </div>
-            <div className="stamp-container">
-                <img src={stamp} alt="stamp" className="stamp" />
-            </div>
+
             <div className="pics">
                 <div className="pics-row">
                     <img src={pic3}  alt="pic3"  className="about-pic1" />
@@ -38,9 +49,11 @@ export default function AboutPics() {
                     <img src={pic5}  alt="pic5"  className="about-pic10" />
                 </div>
             </div>
+
             <div className="line1">
                 <img src={line} alt="line" className="line2" />
             </div>
+
         </div>
     );
 }

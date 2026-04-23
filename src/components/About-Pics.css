@@ -1,6 +1,6 @@
 .about-pics {
-    display: flex;
-    flex-wrap: wrap;  /* so pics still flow below */
+    flex-wrap: wrap;  
+    align-items: flex-start;
 }
 
 .line {
@@ -9,16 +9,10 @@
     margin-bottom: -5%;
 }
 
-.about-pics-title {
-    flex: 1;  /* takes up remaining space */
-    margin-left: 10%;
-    margin-top: 3%;
-}
-
-.stamp-container {
-    margin-left: auto;  /* pushes stamp to the right */
-    margin-right: 0;   /* removed negative margin */
-    margin-top: 5%;
+.title-stamp-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .stamp {
