@@ -50,7 +50,7 @@ useEffect(() => {
             <div className="favourites-text" ref={textRef}>
                 <h2 className="favourites-title">These are a few of <br /><span className="italic1">my favourite things...</span></h2>
                 <p className="favourites-subtitle">Outside of school and work, I love being active and exploring. I absolutely love swimming, hiking, and baking.
-                    I love trying something new, but i also have a few favourites I keep coming back to.
+                    I love trying something new, but I also have a few favourites I keep coming back to.
                 </p>
             </div>
         </div>
