@@ -25,7 +25,7 @@ export default function AboutPostcard() {
                 <img src={stars} className="stars1" alt="Stars1" />
                 <img src={twinkle5} className="twinkle5" alt="Twinkle5" />
                 <div className="about-text">
-                    <p>I'm Taylor! I'm studying <span className="bold">Systems Design Engineering at the University of Waterloo,</span>  and I'm currently working as a 
+                    <p>I'm Taylor! I'm studying <span className="bold">Systems Design Engineering at the University of Waterloo,</span>  and I've previously worked as a 
                         <span className="bold"> Mechanical Engineer at Evertz.</span> </p>
                     <p>I live in a constant state of <span className="bold">wanderlust</span> - not just for places, but for ideas. I'm passionate about exploring the world and understanding how it works, 
                         with the goal of leaving it better than I found it. </p>    
