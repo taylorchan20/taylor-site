@@ -9,6 +9,10 @@ import stars from '../assets/Stars.png';
 import arrowImg from '../assets/Arrow.png';
 import twinkle5 from '../assets/Twinkle_3.png';
 
+export const aboutPostcardAssets = [
+    aboutImg, hiImg, heartImg, moonImg, meImg, twinkleImg, logoImg, stars, arrowImg, twinkle5
+];
+
 export default function AboutPostcard() {
     return (
         <div className="about-postcard">

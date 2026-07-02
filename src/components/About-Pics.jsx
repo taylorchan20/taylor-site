@@ -11,6 +11,8 @@ import pic10 from '../assets/pic10.png';
 import line from '../assets/Line.png';
 import stamp from '../assets/Stamp.png';
 
+export const aboutPicsAssets = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, line, stamp];
+
 export default function AboutPics() {
     return (
         <div className="about-pics">

@@ -1,10 +1,16 @@
 import React, { useRef, useEffect } from 'react';
-import AboutPostcard from '../../components/About-Postcard';
-import AboutFavourites from '../../components/About-Favourites';
-import AboutPics from '../../components/About-Pics';
+import AboutPostcard, { aboutPostcardAssets } from '../../components/About-Postcard';
+import AboutFavourites, { aboutFavouritesAssets } from '../../components/About-Favourites';
+import AboutPics, { aboutPicsAssets } from '../../components/About-Pics';
 import '../../components/About-Postcard.css';
 import '../../components/About-Favourites.css';
 import '../../components/About-Pics.css';
+
+export const aboutAssets = [
+    ...aboutPostcardAssets,
+    ...aboutFavouritesAssets,
+    ...aboutPicsAssets
+];
 
 function About() {
     const aboutPostcardRef = useRef(null);
@@ -12,7 +18,7 @@ function About() {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && aboutPostcardRef.current) {
                     aboutPostcardRef.current.classList.add('visible');
                 }
             },

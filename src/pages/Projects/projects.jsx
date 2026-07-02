@@ -18,6 +18,7 @@ import BackBlueMobile from "../../assets/BackBlueMobile.png";
 import BackPMobile from "../../assets/BackPMobile.png";
 import BackLPMobile from "../../assets/BackLPMobile.png";
 
+
 console.log('taank:', taank);
 console.log('portfolio:', portfolio);
 

@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar';
 import Home from './pages/Home/home';
-import Footer from './components/Footer';
-import LoadingScreen from './components/LoadingScreen';
 import About from './pages/About/about';
 import Projects from './pages/Projects/projects';
+import Footer from './components/Footer';
+import LoadingScreen from './components/LoadingScreen';
+import { postcardAssets } from './components/Postcard';
+import { aboutAssets } from './pages/About/about';
+// import { projectsAssets } from './pages/Projects/projects';
 
+const assetsByPath = {
+  '/': postcardAssets,
+  '/about': aboutAssets,
+  // '/projects': projectsAssets,
+};
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -18,28 +25,44 @@ function ScrollToTop() {
     return null;
 }
 
-function App() {
-  const [loading, setLoading] = useState(() => {
-    return !sessionStorage.getItem('hasLoaded');
-  });
+function AppContent() {
+  const { pathname } = useLocation();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    setLoading(true);
+  }, [pathname]);
+
+  const currentAssets = assetsByPath[pathname] || [];
+
+  return (
+    <div className="App purple">
+      {loading && (
+        <LoadingScreen
+          onFinish={() => setLoading(false)}
+          assetsToLoad={currentAssets}
+        />
+      )}
+      {!loading && (
+        <div className="app-container">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+          <Footer />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="App purple">
-        {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
-        {!loading && (
-          <div className="app-container">
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-            </Routes>
-            <Footer />
-          </div>
-        )}
-      </div>
+      <AppContent />
     </BrowserRouter>
   );
 }

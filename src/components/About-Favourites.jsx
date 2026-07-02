@@ -3,6 +3,8 @@ import envelope2Img from '../assets/Envelope2.png';
 import letterImg from '../assets/Letter.png';
 import { useRef, useEffect } from 'react';
 
+export const aboutFavouritesAssets = [envelope1Img, envelope2Img, letterImg];
+
 export default function AboutFavourites() {
     const letterRef = useRef(null);
     const listRef = useRef(null);
@@ -20,7 +22,7 @@ useEffect(() => {
                 }
             });
         },
-        { threshold: 0.6 }
+        { threshold: 0.8 }
     );
 
     const timer = setTimeout(() => {

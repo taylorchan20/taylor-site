@@ -92,6 +92,11 @@ body {
   transform: rotateY(180deg);
 } */
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .contact-footer {
   margin-top: 50px;
   margin-bottom: 50px;

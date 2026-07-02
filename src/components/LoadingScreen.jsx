@@ -11,11 +11,19 @@ function LoadingScreen({ onFinish, assetsToLoad }) {
     const [currentImage, setCurrentImage] = useState(0);
     const [leaving, setLeaving] = useState(false);
     const [assetsReady, setAssetsReady] = useState(false);
+    const [cycleComplete, setCycleComplete] = useState(false);
 
-    // cycle the decorative loading images (purely visual, keep as is)
+    // cycle the decorative loading images once through, then stop
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % spinnerImages.length);
+            setCurrentImage((prev) => {
+                if (prev === spinnerImages.length - 1) {
+                    clearInterval(interval);
+                    setCycleComplete(true);
+                    return prev;
+                }
+                return prev + 1;
+            });
         }, 800);
         return () => clearInterval(interval);
     }, []);
@@ -29,14 +37,14 @@ function LoadingScreen({ onFinish, assetsToLoad }) {
         return () => { cancelled = true; };
     }, [assetsToLoad]);
 
-    // only leave once assets are ready
+    // only leave once BOTH the spinner cycle and real assets are done
     useEffect(() => {
-        if (assetsReady) {
+        if (assetsReady && cycleComplete) {
             setLeaving(true);
             const timer = setTimeout(onFinish, 600); // let slide-up animation play
             return () => clearTimeout(timer);
         }
-    }, [assetsReady, onFinish]);
+    }, [assetsReady, cycleComplete, onFinish]);
 
     return (
         <div className={`loading-screen ${leaving ? 'slide-up' : ''}`}>
