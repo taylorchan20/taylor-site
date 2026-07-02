@@ -11,6 +11,11 @@ import twinkle1Img from '../assets/Twinkle1.png';
 import twinkle2Img from '../assets/Twinkle2.png';
 import twinkle3Img from '../assets/Twinkle_3.png';
 
+export const postcardAssets = [
+  postcardImg, nameImg, logoImg, mirrorballImg, starsImg,
+  shellsImg, hatImg, diamondImg, twinkle1Img, twinkle2Img, twinkle3Img
+];
+
 export default function Postcard() {
   return (
     <div className="postcard">

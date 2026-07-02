@@ -1,11 +1,14 @@
 import { useEffect, useRef } from 'react';
 // import Description from '../../components/Description';
 // import ProjectCard from '../../components/ProjectCard';
+import { postcardAssets } from '../../components/Postcard';
 import Postcard from '../../components/Postcard';
 import './home.css';
+import LoadingScreen from '../../components/LoadingScreen';
 
 function Home() {
   const postcardRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,13 +26,18 @@ function Home() {
 
   return (
     <div className="home-page">
-      <div className="name-intro">
-      </div>
+      {loading && (
+        <LoadingScreen
+          onFinish={() => setLoading(false)}
+          assetsToLoad={postcardAssets}
+        />
+      )}
+
+      <div className="name-intro"></div>
 
       <div className="postcard-wrapper" ref={postcardRef}>
         <Postcard />
       </div>
-
     </div>
   );
 }
